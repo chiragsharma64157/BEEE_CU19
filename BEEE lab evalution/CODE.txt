@@ -1,0 +1,22 @@
+int X=0;
+int l, m;
+
+void setup()
+{
+  pinMode(A0,INPUT);
+  m = analogRead(A0);
+  pinMode(2, OUTPUT);
+}
+
+void loop()
+{
+  l = analogRead(A0);
+  if (l == m)
+  {
+    digitalWrite(2, HIGH);
+  	delay(100);
+  	digitalWrite(2, LOW);
+  }
+  else if (l < m)
+    digitalWrite(2, HIGH);
+}
